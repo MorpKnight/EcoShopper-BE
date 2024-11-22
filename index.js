@@ -25,7 +25,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const authRoutes = require('./src/routes/auth.routes');
+const goodsRoutes = require('./src/routes/goods.routes');
 app.use('/auth', authRoutes);
+app.use('/goods', goodsRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
