@@ -1,8 +1,8 @@
-const goodServices = require('../services/goods.services');
+const adminServices = require('../services/admin.services');
 
-exports.getGoods = async (req, res) => {
+exports.addProduct = async (req, res) => {
     try {
-        const response = await goodServices.getGoods();
+        const response = await adminServices.addProduct(req.body);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -10,9 +10,9 @@ exports.getGoods = async (req, res) => {
     }
 }
 
-exports.getGood = async (req, res) => {
+exports.addProducer = async (req, res) => {
     try {
-        const response = await goodServices.getGood(req.body);
+        const response = await adminServices.addProducer(req.body);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -20,9 +20,9 @@ exports.getGood = async (req, res) => {
     }
 }
 
-exports.getGoodsByCategory = async (req, res) => {
+exports.editProduct = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsByCategory(req.body);
+        const response = await adminServices.editProduct(req.body);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -30,9 +30,9 @@ exports.getGoodsByCategory = async (req, res) => {
     }
 }
 
-exports.getGoodsByName = async (req, res) => {
+exports.editProducer = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsByName(req.body);
+        const response = await adminServices.editProducer(req.body);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -40,9 +40,9 @@ exports.getGoodsByName = async (req, res) => {
     }
 }
 
-exports.getGoodsBySR = async (req, res) => {
+exports.deleteProduct = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsBySR(req.body);
+        const response = await adminServices.deleteProduct(req.body);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -50,19 +50,9 @@ exports.getGoodsBySR = async (req, res) => {
     }
 }
 
-exports.getGoodsByProducer = async (req, res) => {
+exports.deleteProducer = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsByProducer(req.body);
-        return res.status(200).json(response);
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({ error: error.message });
-    }
-}
-
-exports.goodsAlternative = async (req, res) => {
-    try {
-        const response = await goodServices.goodsAlternative(req.body);
+        const response = await adminServices.deleteProducer(req.body);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
