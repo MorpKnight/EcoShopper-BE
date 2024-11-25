@@ -10,7 +10,7 @@ CREATE TYPE food_subcategory AS ENUM ('fruits', 'vegetables', 'meat', 'seafood',
   'rice', 'noodles_pasta', 'snacks', 'frozen', 'beverages', 'spices_condiments');
 
 CREATE TABLE IF NOT EXISTS users (
-  id UUID PRIMARY KEY NOT NULL,
+  id text PRIMARY KEY NOT NULL,
   display_name TEXT NOT NULL,
   email text NOT NULL,
   display_picture TEXT,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS products (
 CREATE TABLE IF NOT EXISTS users_products (
   id UUID PRIMARY KEY NOT NULL DEFAULT GEN_RANDOM_UUID(),
   purchase_date TIMESTAMP NOT NULL DEFAULT NOW(),
-  user_id UUID NOT NULL REFERENCES users(id),
+  user_id text NOT NULL REFERENCES users(id),
   product_id UUID NOT NULL REFERENCES products(id),
   quantity NUMERIC NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
