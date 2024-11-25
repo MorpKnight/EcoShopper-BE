@@ -28,7 +28,8 @@ app.use(sanitizer.clean({
         noSql: true,
         sql: true,
       },
-      only = ["body", "query"]
+      only = ["body", "query"],
+      whiteList = ['/auth/callback']
     )
 );
 
