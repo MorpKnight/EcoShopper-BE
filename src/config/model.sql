@@ -1,14 +1,20 @@
+DROP TABLE IF EXISTS users_products, products, producers, users CASCADE;
+DROP TYPE IF EXISTS user_role, product_category, food_subcategory CASCADE;
+
 CREATE TYPE user_role AS ENUM ('admin', 'user');
 CREATE TYPE product_category AS ENUM ('fruits', 'vegetables', 'dairy', 'meat', 'seafood', 'bakery',
   'beverages', 'snacks', 'frozen', 'household', 'personal_care', 'baby_products', 'pet_supplies', 'health', 'beauty', 
   'electronics', 'clothing', 'stationery'
 );
+CREATE TYPE food_subcategory AS ENUM ('fruits', 'vegetables', 'meat', 'seafood', 'dairy', 'bakery', 
+  'rice', 'noodles_pasta', 'snacks', 'frozen', 'beverages', 'spices_condiments');
 
 CREATE TABLE IF NOT EXISTS users (
   id UUID PRIMARY KEY NOT NULL,
   display_name TEXT NOT NULL,
   email text NOT NULL,
   display_picture TEXT,
+  sustainability_rating NUMERIC NOT NULL DEFAULT 0,
   role user_role NOT NULL DEFAULT 'user',
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
@@ -31,6 +37,9 @@ CREATE TABLE IF NOT EXISTS products (
   product_image TEXT,
   product_sustainability_rating NUMERIC NOT NULL,
   product_producer_id UUID NOT NULL REFERENCES producers(id),
+  product_type TEXT NOT NULL CHECK (product_type IN ('food', 'non-food')),
+  is_organic BOOLEAN DEFAULT FALSE,
+  food_subcategory food_subcategory DEFAULT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
@@ -42,6 +51,3 @@ CREATE TABLE IF NOT EXISTS users_products (
   quantity NUMERIC NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
-
-DROP TYPE IF EXISTS user_role, product_category CASCADE;
-DROP TABLE IF EXISTS users_products, products, producers, users CASCADE;

@@ -1,11 +1,14 @@
 const router = require('express').Router();
 const adminControllers = require('../controllers/admin.controllers');
+const { verifyToken, isAdmin } = require('../middlewares/auth.middlewares');
 
-router.post('/addProduct', adminControllers.addProduct);
-router.post('/addProducer', adminControllers.addProducer);
-router.put('/editProduct', adminControllers.editProduct);
-router.put('/editProducer', adminControllers.editProducer);
-router.delete('/deleteProduct', adminControllers.deleteProduct);
-router.delete('/deleteProducer', adminControllers.deleteProducer);
+router.use(verifyToken, isAdmin);
+
+router.post('/add-product', adminControllers.addProduct);
+router.post('/add-producer', adminControllers.addProducer);
+router.put('/edit-product', adminControllers.editProduct);
+router.put('/edit-producer', adminControllers.editProducer);
+router.delete('/delete-product', adminControllers.deleteProduct);
+router.delete('/delete-producer', adminControllers.deleteProducer);
 
 module.exports = router;
