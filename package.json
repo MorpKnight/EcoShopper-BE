@@ -24,6 +24,7 @@
     "passport-google-oauth20": "^2.0.0",
     "perfect-express-sanitizer": "^2.0.2",
     "pg": "^8.13.0",
+    "winston": "^3.17.0",
     "winston-transport": "^4.9.0"
   }
 }
