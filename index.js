@@ -35,7 +35,7 @@ app.use(sanitizer.clean({
 app.use(passport.initialize());
 app.use(passport.session());
 
-const morganMiddleware = require('./src/middlewares/Morgan.middlewares');
+const morganMiddleware = require('./src/middlewares/morgan.middlewares');
 app.use(morganMiddleware);
 
 pool.connect().then(() => {
