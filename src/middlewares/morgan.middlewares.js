@@ -1,13 +1,16 @@
 const morgan = require('morgan');
-const logger = require('../utils/logger')
+const logger = require('../utils/logger');
+
+const whitelist = ['/auth/callback', '/auth/google'];
 
 const stream = {
     write: (message) => logger.http(message.trim())
 };
 
-const skip = () => {
+const skip = (req) => {
     const env = process.env.NODE_ENV || 'production';
-    return env !== 'production';
+    if (env !== 'production') return true;
+    return !whitelist.includes(req.originalUrl);
 };
 
 const morganMiddleware = morgan(

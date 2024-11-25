@@ -9,6 +9,7 @@ exports.verifyToken = async (req, res, next) => {
         const checkUserResponse = await pool.query('SELECT * FROM users WHERE id = $1', [decoded.id]);
         if (checkUserResponse.rows.length === 0) throw new Error('User not found');
         req.user = decoded;
+        console.log(req.user);
         next();
     } catch (error) {
         res.status(401).json({ success: false, message: error.message });

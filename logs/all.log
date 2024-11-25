@@ -96,3 +96,7 @@
 [35m2024-11-25 19:50:28 http: GET /auth/callback/?code=4%2F0AeanS0bKJC39xgSIUeR9x4Eo6qZdDrgC8-sKzSbsf8bTrS9pD1hAykenR-AoXuamTe0t-Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 200 254 - 752.535 ms -[39m
 [35m2024-11-25 19:51:26 http: GET /auth/google 302 0 - 1.565 ms -[39m
 [35m2024-11-25 19:51:29 http: GET /auth/callback/?code=4%2F0AeanS0bLdKaf1oaBwvKPRNkzVkYNWkqgstwYGobo-PjPPdZgu_b-W2hb65LK9mQHjSNVNA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none 200 254 - 415.451 ms -[39m
+[35m2024-11-25 19:54:49 http: GET /auth/google 302 0 - 1.546 ms -[39m
+[35m2024-11-25 19:54:53 http: GET /auth/callback/?code=4%2F0AeanS0acVF1Yt8-lAi26SeeUrc98qPKZKeb0m2GNID6DnaPQt9S_p8if_7465-fnXwDxHw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 200 254 - 477.908 ms -[39m
+[35m2024-11-25 20:23:22 http: GET /auth/google 302 0 - 1.532 ms -[39m
+[35m2024-11-25 20:23:45 http: GET /auth/google 302 0 - 0.330 ms -[39m

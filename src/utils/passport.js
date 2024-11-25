@@ -15,10 +15,6 @@ passport.use(
 
     function (accessToken, refreshToken, profile, done) { 
       // User find or create to db
-      console.log('Access Token: ', accessToken);
-      console.log('Refresh Token: ', refreshToken);
-      console.log('Profile: ', profile);
-      
       return done(null, profile); 
     } 
   ) 
