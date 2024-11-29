@@ -51,3 +51,19 @@ CREATE TABLE IF NOT EXISTS users_products (
   quantity NUMERIC NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
+-- Dummy data for producers
+INSERT INTO producers (producer_name, producer_location, producer_description, producer_image)
+VALUES 
+('Green Farms', 'California, USA', 'Organic farm producing fresh vegetables and fruits', 'green_farms.jpg'),
+('Dairy Delight', 'Wisconsin, USA', 'Family-owned dairy farm', 'dairy_delight.jpg'),
+('Seafood Haven', 'Maine, USA', 'Sustainable seafood supplier', 'seafood_haven.jpg'),
+('Bakery Bliss', 'New York, USA', 'Artisan bakery with a variety of breads and pastries', 'bakery_bliss.jpg');
+
+-- Dummy data for products
+INSERT INTO products (product_name, product_description, product_category, product_price, product_image, product_sustainability_rating, product_producer_id, product_type, is_organic, food_subcategory)
+VALUES 
+('Organic Apples', 'Fresh organic apples', 'fruits', 3.99, 'organic_apples.jpg', 4.5, (SELECT id FROM producers WHERE producer_name = 'Green Farms'), 'food', TRUE, 'fruits'),
+('Whole Milk', 'Fresh whole milk', 'dairy', 2.99, 'whole_milk.jpg', 4.0, (SELECT id FROM producers WHERE producer_name = 'Dairy Delight'), 'food', FALSE, 'dairy'),
+('Salmon Fillet', 'Fresh salmon fillet', 'seafood', 12.99, 'salmon_fillet.jpg', 4.8, (SELECT id FROM producers WHERE producer_name = 'Seafood Haven'), 'food', FALSE, 'seafood'),
+('Sourdough Bread', 'Artisan sourdough bread', 'bakery', 4.99, 'sourdough_bread.jpg', 4.7, (SELECT id FROM producers WHERE producer_name = 'Bakery Bliss'), 'food', TRUE, 'bakery');

@@ -12,7 +12,7 @@ exports.getGoods = async (req, res) => {
 
 exports.getGood = async (req, res) => {
     try {
-        const response = await goodServices.getGood(req.body);
+        const response = await goodServices.getGood(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -22,7 +22,7 @@ exports.getGood = async (req, res) => {
 
 exports.getGoodsByCategory = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsByCategory(req.body);
+        const response = await goodServices.getGoodsByCategory(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -32,7 +32,7 @@ exports.getGoodsByCategory = async (req, res) => {
 
 exports.getGoodsByName = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsByName(req.body);
+        const response = await goodServices.getGoodsByName(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -42,7 +42,7 @@ exports.getGoodsByName = async (req, res) => {
 
 exports.getGoodsBySR = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsBySR(req.body);
+        const response = await goodServices.getGoodsBySR(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -52,7 +52,7 @@ exports.getGoodsBySR = async (req, res) => {
 
 exports.getGoodsByProducer = async (req, res) => {
     try {
-        const response = await goodServices.getGoodsByProducer(req.body);
+        const response = await goodServices.getGoodsByProducer(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -62,7 +62,7 @@ exports.getGoodsByProducer = async (req, res) => {
 
 exports.goodsAlternative = async (req, res) => {
     try {
-        const response = await goodServices.goodsAlternative(req.body);
+        const response = await goodServices.goodsAlternative(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);

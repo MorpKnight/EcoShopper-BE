@@ -2,7 +2,7 @@ const producerServices = require('../services/producer.services');
 
 exports.getProducer = async (req, res) => {
     try {
-        const response = await producerServices.getProducer(req.body);
+        const response = await producerServices.getProducer(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -22,7 +22,7 @@ exports.getProducers = async (req, res) => {
 
 exports.getProducerGoods = async (req, res) => {
     try {
-        const response = await producerServices.getProducerGoods(req.body);
+        const response = await producerServices.getProducerGoods(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -32,7 +32,7 @@ exports.getProducerGoods = async (req, res) => {
 
 exports.getProducerByName = async (req, res) => {
     try {
-        const response = await producerServices.getProducerByName(req.body);
+        const response = await producerServices.getProducerByName(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
@@ -42,7 +42,7 @@ exports.getProducerByName = async (req, res) => {
 
 exports.getProducerByLocation = async (req, res) => {
     try {
-        const response = await producerServices.getProducerByLocation(req.body);
+        const response = await producerServices.getProducerByLocation(req.params);
         return res.status(200).json(response);
     } catch (error) {
         console.log(error);
