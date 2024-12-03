@@ -4,6 +4,7 @@ const passport = require('passport');
 const sanitizer = require('perfect-express-sanitizer');
 const cors = require('cors');
 const { pool } = require('./src/config/db.config');
+const pgSession = require('connect-pg-simple')(session);
 
 require('dotenv').config();
 require('./src/utils/passport');
@@ -19,6 +20,10 @@ app.use(cors({
 }));
 
 app.use(session({
+    store: new pgSession({
+        pool: pool,
+        tableName: 'session'
+    }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false

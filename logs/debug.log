@@ -119,3 +119,11 @@
 [35m2024-12-02 07:53:49 http: GET /auth/google 302 0 - 0.261 ms -[39m
 [35m2024-12-02 08:04:08 http: GET /auth/google 302 0 - 1.503 ms -[39m
 [35m2024-12-02 08:07:33 http: GET /auth/google 302 0 - 0.525 ms -[39m
+[32m2024-12-03 20:13:42 info: User logged in: christoffelsihombing@gmail.com[39m
+[35m2024-12-03 20:13:42 http: POST /auth/login 200 272 - 256.614 ms -[39m
+[35m2024-12-03 20:13:58 http: DELETE /admin/delete-product 401 83 - 0.620 ms -[39m
+[35m2024-12-03 20:14:16 http: DELETE /admin/delete-product 401 83 - 2.762 ms -[39m
+[35m2024-12-03 20:14:20 http: DELETE /admin/delete-product 401 83 - 0.863 ms -[39m
+[35m2024-12-03 20:14:32 http: DELETE /admin/delete-product 401 83 - 4.197 ms -[39m
+[35m2024-12-03 20:14:38 http: DELETE /admin/delete-product 401 83 - 2.266 ms -[39m
+[35m2024-12-03 20:14:50 http: DELETE /admin/delete-product 403 42 - 192.785 ms -[39m
