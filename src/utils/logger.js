@@ -13,7 +13,6 @@ const levels = {
 const customLevels = {
   user: 0,
   admin: 0,
-  master_admin: 0,
 };
 
 const level = () => {
@@ -33,7 +32,6 @@ const colors = {
 const customColors = {
   user: 'yellow',
   admin: 'green',
-  master_admin: 'blue',
 };
 
 winston.addColors(colors);
@@ -92,7 +90,6 @@ const customTransports = [
   new winston.transports.Console(),
   new winston.transports.File({ filename: 'logs/user.log', level: 'user' }),
   new winston.transports.File({ filename: 'logs/admin.log', level: 'admin' }),
-  new winston.transports.File({ filename: 'logs/master_admin.log', level: 'master_admin' }),
 ];
 
 const Logger = winston.createLogger({

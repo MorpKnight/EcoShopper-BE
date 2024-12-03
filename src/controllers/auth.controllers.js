@@ -1,4 +1,5 @@
 const authServices = require('../services/auth.services');
+const { Logger } = require('../utils/logger');
 
 exports.loginGoogle = authServices.loginGoogle;
 
@@ -23,6 +24,7 @@ exports.logout = async (req, res) => {
     res.clearCookie('token');
     res.status(200).json(response);
   } catch (error) {
+    Logger.error(error.message);
     res.status(500).json({ error: error.message });
   }
 }
@@ -31,9 +33,10 @@ exports.registerEmail = async (req, res) => {
   try {
     const response = await authServices.registerEmail(req.body);
     if(!response) throw new Error('Failed to register user');
-
+    
     res.status(200).json(response);
   } catch (error) {
+    Logger.error(error.message);
     res.status(500).json({ error: error.message });
   }
 }
@@ -46,6 +49,7 @@ exports.loginEmail = async (req, res) => {
     res.cookie('token', response.token, { httpOnly: true, sameSite: 'none', secure: true });
     res.status(200).json(response);
   } catch (error) {
+    Logger.error(error.message);
     res.status(500).json({ error: error.message });
   }
 }

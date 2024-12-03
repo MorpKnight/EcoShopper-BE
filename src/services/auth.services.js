@@ -2,6 +2,7 @@ const passport = require('passport');
 const { pool } = require('../config/db.config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const { Logger } = require('../utils/logger');
 
 exports.loginGoogle = passport.authenticate('google', {
     scope: ['profile', 'email']
@@ -39,6 +40,7 @@ exports.registerEmail = async (body) => {
     const insertUserResponse = await pool.query('INSERT INTO users (email, password, display_name, fullname, login_type) VALUES ($1, $2, $3, $4, $5)', [email, hashedPassword, displayname, fullname, 'email']);
     if(insertUserResponse.rowCount === 0) throw new Error('Failed to insert user into database');
 
+    Logger.info(`User registered: ${email}`);
     return { success : true, message : 'User registered successfully' };
 }
 
@@ -53,6 +55,7 @@ exports.loginEmail = async (body) => {
     const passwordMatch = await bcrypt.compare(password, user.password);
     if(!passwordMatch) throw new Error('Invalid password');
 
+    Logger.info(`User logged in: ${email}`);
     const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '30d' });
     return { success : true, message : 'User logged in successfully', token };
 }
