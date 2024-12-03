@@ -129,3 +129,159 @@
 [35m2024-12-03 20:14:50 http: DELETE /admin/delete-product 403 42 - 192.785 ms -[39m
 [32m2024-12-03 20:17:30 info: User logged in: christoffelsihombing@gmail.com[39m
 [35m2024-12-03 20:17:30 http: POST /auth/login 200 272 - 200.243 ms -[39m
+[32m2024-12-03 20:28:38 info: User logged in: christoffelsihombing@gmail.com[39m
+[35m2024-12-03 20:28:38 http: POST /auth/login 200 272 - 269.784 ms -[39m
+[32m2024-12-03 20:30:39 info: Goods were successfully fetched[39m
+[35m2024-12-03 20:30:39 http: GET /goods 200 71 - 186.674 ms -[39m
+[32m2024-12-03 20:30:41 info: Goods were successfully fetched[39m
+[35m2024-12-03 20:30:41 http: GET /goods 304 - - 24.852 ms -[39m
+[32m2024-12-03 20:31:35 info: Goods were successfully fetched[39m
+[35m2024-12-03 20:31:35 http: GET /goods 304 - - 204.596 ms -[39m
+[32m2024-12-03 20:31:36 info: Goods were successfully fetched[39m
+[35m2024-12-03 20:31:36 http: GET /goods 304 - - 57.743 ms -[39m
+[32m2024-12-03 20:34:09 info: Goods were successfully fetched[39m
+[35m2024-12-03 20:34:09 http: GET /goods 304 - - 206.026 ms -[39m
+[32m2024-12-03 20:34:43 info: Goods were successfully fetched[39m
+[35m2024-12-03 20:34:43 http: GET /goods 304 - - 110.963 ms -[39m
+[32m2024-12-03 21:53:25 info: Goods were successfully fetched[39m
+[35m2024-12-03 21:53:25 http: GET /goods/ 200 11920 - 218.376 ms -[39m
+[35m2024-12-04 00:21:06 http: GET /user/profile 401 83 - 14.230 ms -[39m
+[32m2024-12-04 00:21:07 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:21:07 http: GET /goods 200 11920 - 150.904 ms -[39m
+[35m2024-12-04 00:21:08 http: GET /user/profile 401 83 - 1.408 ms -[39m
+[32m2024-12-04 00:21:09 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:21:09 http: GET /goods 304 - - 32.886 ms -[39m
+[32m2024-12-04 00:21:25 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:21:25 http: GET /goods 304 - - 143.435 ms -[39m
+[32m2024-12-04 00:21:27 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:21:27 http: GET /goods 304 - - 39.700 ms -[39m
+[32m2024-12-04 00:21:39 info: User logged in: christoffelsihombing@gmail.com[39m
+[35m2024-12-04 00:21:39 http: POST /auth/login 200 272 - 234.721 ms -[39m
+[35m2024-12-04 00:21:40 http: GET /user/profile 401 83 - 1.636 ms -[39m
+[32m2024-12-04 00:21:40 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:21:40 http: GET /goods 304 - - 40.737 ms -[39m
+[32m2024-12-04 00:21:42 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:21:42 http: GET /goods 304 - - 29.388 ms -[39m
+[35m2024-12-04 00:22:24 http: GET /user/profile 401 83 - 1.997 ms -[39m
+[35m2024-12-04 00:22:50 http: GET /user/profile 200 455 - 243.097 ms -[39m
+[35m2024-12-04 00:23:57 http: GET /user/profile 304 - - 216.510 ms -[39m
+[35m2024-12-04 00:24:03 http: GET /user/profile 304 - - 93.885 ms -[39m
+[35m2024-12-04 00:24:35 http: GET /user/profile 304 - - 213.016 ms -[39m
+[32m2024-12-04 00:24:51 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:24:51 http: GET /goods 304 - - 171.849 ms -[39m
+[35m2024-12-04 00:24:52 http: GET /user/profile 304 - - 212.747 ms -[39m
+[32m2024-12-04 00:24:53 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:24:53 http: GET /goods 304 - - 23.617 ms -[39m
+[35m2024-12-04 00:24:53 http: GET /user/profile 304 - - 89.672 ms -[39m
+[35m2024-12-04 00:25:12 http: GET /user/profile 304 - - 204.320 ms -[39m
+[35m2024-12-04 00:25:45 http: GET /user/profile 304 - - 190.687 ms -[39m
+[35m2024-12-04 00:25:51 http: GET /user/profile 304 - - 82.561 ms -[39m
+[35m2024-12-04 00:26:10 http: GET /user/profile 304 - - 234.072 ms -[39m
+[35m2024-12-04 00:26:56 http: GET /user/profile 304 - - 199.256 ms -[39m
+[35m2024-12-04 00:26:58 http: GET /user/profile 304 - - 65.058 ms -[39m
+[35m2024-12-04 00:28:07 http: GET /user/profile 304 - - 200.806 ms -[39m
+[35m2024-12-04 00:28:12 http: GET /user/profile 304 - - 97.380 ms -[39m
+[35m2024-12-04 00:28:20 http: GET /user/profile 304 - - 189.543 ms -[39m
+[35m2024-12-04 00:28:22 http: GET /user/profile 304 - - 82.097 ms -[39m
+[35m2024-12-04 00:28:24 http: GET /user/profile 304 - - 91.142 ms -[39m
+[35m2024-12-04 00:28:26 http: GET /user/profile 304 - - 78.723 ms -[39m
+[35m2024-12-04 00:28:28 http: GET /user/profile 304 - - 89.850 ms -[39m
+[35m2024-12-04 00:28:30 http: GET /user/profile 304 - - 74.885 ms -[39m
+[35m2024-12-04 00:28:32 http: GET /user/profile 304 - - 66.421 ms -[39m
+[35m2024-12-04 00:28:34 http: GET /user/profile 304 - - 119.250 ms -[39m
+[35m2024-12-04 00:28:36 http: GET /user/profile 304 - - 85.325 ms -[39m
+[35m2024-12-04 00:28:38 http: GET /user/profile 304 - - 131.836 ms -[39m
+[35m2024-12-04 00:28:40 http: GET /user/profile 304 - - 125.282 ms -[39m
+[35m2024-12-04 00:28:42 http: GET /user/profile 304 - - 140.823 ms -[39m
+[35m2024-12-04 00:28:44 http: GET /user/profile 304 - - 73.481 ms -[39m
+[35m2024-12-04 00:28:46 http: GET /user/profile 304 - - 225.425 ms -[39m
+[35m2024-12-04 00:28:49 http: GET /user/profile 304 - - 377.288 ms -[39m
+[35m2024-12-04 00:28:50 http: GET /user/profile 304 - - 92.248 ms -[39m
+[35m2024-12-04 00:28:52 http: GET /user/profile 304 - - 199.584 ms -[39m
+[35m2024-12-04 00:28:54 http: GET /user/profile 304 - - 72.057 ms -[39m
+[35m2024-12-04 00:28:56 http: GET /user/profile 304 - - 71.351 ms -[39m
+[35m2024-12-04 00:28:58 http: GET /user/profile 304 - - 72.402 ms -[39m
+[35m2024-12-04 00:29:00 http: GET /user/profile 304 - - 65.395 ms -[39m
+[35m2024-12-04 00:29:02 http: GET /user/profile 304 - - 90.911 ms -[39m
+[35m2024-12-04 00:29:05 http: GET /user/profile 304 - - 62.829 ms -[39m
+[35m2024-12-04 00:29:07 http: GET /user/profile 304 - - 86.070 ms -[39m
+[35m2024-12-04 00:29:09 http: GET /user/profile 304 - - 102.811 ms -[39m
+[35m2024-12-04 00:29:11 http: GET /user/profile 304 - - 77.031 ms -[39m
+[35m2024-12-04 00:29:13 http: GET /user/profile 304 - - 80.997 ms -[39m
+[35m2024-12-04 00:29:15 http: GET /user/profile 304 - - 92.833 ms -[39m
+[35m2024-12-04 00:29:17 http: GET /user/profile 304 - - 83.093 ms -[39m
+[35m2024-12-04 00:29:19 http: GET /user/profile 304 - - 70.301 ms -[39m
+[35m2024-12-04 00:29:21 http: GET /user/profile 304 - - 77.039 ms -[39m
+[35m2024-12-04 00:29:23 http: GET /user/profile 304 - - 102.886 ms -[39m
+[35m2024-12-04 00:29:25 http: GET /user/profile 304 - - 77.131 ms -[39m
+[35m2024-12-04 00:29:27 http: GET /user/profile 304 - - 125.249 ms -[39m
+[35m2024-12-04 00:29:29 http: GET /user/profile 304 - - 85.106 ms -[39m
+[35m2024-12-04 00:29:31 http: GET /user/profile 304 - - 72.752 ms -[39m
+[35m2024-12-04 00:29:33 http: GET /user/profile 304 - - 98.165 ms -[39m
+[35m2024-12-04 00:29:35 http: GET /user/profile 304 - - 69.757 ms -[39m
+[35m2024-12-04 00:29:37 http: GET /user/profile 304 - - 71.016 ms -[39m
+[35m2024-12-04 00:29:39 http: GET /user/profile 304 - - 84.777 ms -[39m
+[35m2024-12-04 00:29:41 http: GET /user/profile 304 - - 87.376 ms -[39m
+[35m2024-12-04 00:29:43 http: GET /user/profile 304 - - 80.884 ms -[39m
+[35m2024-12-04 00:29:45 http: GET /user/profile 304 - - 89.111 ms -[39m
+[35m2024-12-04 00:29:47 http: GET /user/profile 304 - - 128.912 ms -[39m
+[35m2024-12-04 00:29:49 http: GET /user/profile 304 - - 80.258 ms -[39m
+[35m2024-12-04 00:29:51 http: GET /user/profile 304 - - 63.665 ms -[39m
+[35m2024-12-04 00:29:53 http: GET /user/profile 304 - - 79.210 ms -[39m
+[35m2024-12-04 00:29:55 http: GET /user/profile 304 - - 78.435 ms -[39m
+[35m2024-12-04 00:29:57 http: GET /user/profile 304 - - 70.814 ms -[39m
+[35m2024-12-04 00:29:59 http: GET /user/profile 304 - - 80.194 ms -[39m
+[35m2024-12-04 00:30:01 http: GET /user/profile 304 - - 76.836 ms -[39m
+[35m2024-12-04 00:30:04 http: GET /user/profile 304 - - 88.778 ms -[39m
+[35m2024-12-04 00:30:06 http: GET /user/profile 304 - - 84.380 ms -[39m
+[35m2024-12-04 00:30:08 http: GET /user/profile 304 - - 87.242 ms -[39m
+[35m2024-12-04 00:30:10 http: GET /user/profile 304 - - 77.054 ms -[39m
+[35m2024-12-04 00:30:12 http: GET /user/profile 304 - - 71.397 ms -[39m
+[35m2024-12-04 00:30:14 http: GET /user/profile 304 - - 186.027 ms -[39m
+[35m2024-12-04 00:30:16 http: GET /user/profile 304 - - 71.041 ms -[39m
+[35m2024-12-04 00:30:18 http: GET /user/profile 304 - - 281.891 ms -[39m
+[35m2024-12-04 00:30:20 http: GET /user/profile 304 - - 110.298 ms -[39m
+[35m2024-12-04 00:30:22 http: GET /user/profile 304 - - 72.406 ms -[39m
+[35m2024-12-04 00:30:24 http: GET /user/profile 304 - - 94.735 ms -[39m
+[35m2024-12-04 00:30:26 http: GET /user/profile 304 - - 82.650 ms -[39m
+[35m2024-12-04 00:30:28 http: GET /user/profile 304 - - 67.123 ms -[39m
+[35m2024-12-04 00:30:30 http: GET /user/profile 304 - - 68.584 ms -[39m
+[35m2024-12-04 00:30:32 http: GET /user/profile 304 - - 74.547 ms -[39m
+[35m2024-12-04 00:30:34 http: GET /user/profile 304 - - 102.779 ms -[39m
+[35m2024-12-04 00:30:36 http: GET /user/profile 304 - - 99.264 ms -[39m
+[35m2024-12-04 00:30:38 http: GET /user/profile 304 - - 75.185 ms -[39m
+[35m2024-12-04 00:30:40 http: GET /user/profile 304 - - 72.876 ms -[39m
+[35m2024-12-04 00:31:26 http: GET /user/profile 304 - - 218.563 ms -[39m
+[35m2024-12-04 00:32:16 http: GET /user/profile 304 - - 213.608 ms -[39m
+[35m2024-12-04 00:33:55 http: GET /user/profile 304 - - 185.624 ms -[39m
+[35m2024-12-04 00:33:57 http: GET /user/profile 304 - - 107.896 ms -[39m
+[32m2024-12-04 00:36:22 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:36:22 http: GET /goods 304 - - 260.236 ms -[39m
+[32m2024-12-04 00:38:53 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:38:53 http: GET /goods 304 - - 168.148 ms -[39m
+[32m2024-12-04 00:38:55 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:38:55 http: GET /goods 304 - - 25.238 ms -[39m
+[32m2024-12-04 00:43:09 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:43:09 http: GET /goods 304 - - 181.335 ms -[39m
+[32m2024-12-04 00:43:11 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:43:11 http: GET /goods 304 - - 19.890 ms -[39m
+[32m2024-12-04 00:45:10 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:45:10 http: GET /goods 304 - - 389.337 ms -[39m
+[32m2024-12-04 00:45:12 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:45:12 http: GET /goods 304 - - 56.524 ms -[39m
+[35m2024-12-04 00:45:13 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 404 181 - 1.581 ms -[39m
+[35m2024-12-04 00:45:15 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 404 181 - 0.862 ms -[39m
+[35m2024-12-04 00:46:12 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 404 181 - 4.494 ms -[39m
+[35m2024-12-04 00:46:14 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 404 181 - 0.882 ms -[39m
+[32m2024-12-04 00:47:12 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:47:12 http: GET /goods 304 - - 170.962 ms -[39m
+[32m2024-12-04 00:47:14 info: Goods were successfully fetched[39m
+[35m2024-12-04 00:47:14 http: GET /goods 304 - - 131.245 ms -[39m
+[32m2024-12-04 00:47:16 info: Good was successfully fetched[39m
+[35m2024-12-04 00:47:16 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 200 484 - 125.966 ms -[39m
+[32m2024-12-04 00:47:18 info: Good was successfully fetched[39m
+[35m2024-12-04 00:47:18 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 304 - - 71.222 ms -[39m
+[32m2024-12-04 00:47:54 info: Good was successfully fetched[39m
+[35m2024-12-04 00:47:54 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 304 - - 229.395 ms -[39m
+[32m2024-12-04 00:48:16 info: Good was successfully fetched[39m
+[35m2024-12-04 00:48:16 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 304 - - 157.575 ms -[39m
