@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const { pool } = require('../config/db.config');
 
 exports.verifyToken = async (req, res, next) => {
+    console.log(req.headers);
     try {
         const token = req.headers.cookie.split('=')[1];
         if (!token) throw new Error('Token not found');

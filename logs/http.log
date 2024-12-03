@@ -127,3 +127,5 @@
 [35m2024-12-03 20:14:32 http: DELETE /admin/delete-product 401 83 - 4.197 ms -[39m
 [35m2024-12-03 20:14:38 http: DELETE /admin/delete-product 401 83 - 2.266 ms -[39m
 [35m2024-12-03 20:14:50 http: DELETE /admin/delete-product 403 42 - 192.785 ms -[39m
+[32m2024-12-03 20:17:30 info: User logged in: christoffelsihombing@gmail.com[39m
+[35m2024-12-03 20:17:30 http: POST /auth/login 200 272 - 200.243 ms -[39m
