@@ -14,7 +14,7 @@ passport.use(
     }, 
 
     function (accessToken, refreshToken, profile, done) { 
-      // User find or create to db 
+      // User find or create to db
       return done(null, profile); 
     } 
   ) 

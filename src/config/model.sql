@@ -1,7 +1,8 @@
 DROP TABLE IF EXISTS users_products, products, producers, users CASCADE;
-DROP TYPE IF EXISTS user_role, product_category, food_subcategory CASCADE;
+DROP TYPE IF EXISTS user_role, login_type, product_category, food_subcategory CASCADE;
 
 CREATE TYPE user_role AS ENUM ('admin', 'user');
+CREATE TYPE login_type AS ENUM ('email', 'google');
 CREATE TYPE product_category AS ENUM ('fruits', 'vegetables', 'dairy', 'meat', 'seafood', 'bakery',
   'beverages', 'snacks', 'frozen', 'household', 'personal_care', 'baby_products', 'pet_supplies', 'health', 'beauty', 
   'electronics', 'clothing', 'stationery'
@@ -10,9 +11,13 @@ CREATE TYPE food_subcategory AS ENUM ('fruits', 'vegetables', 'meat', 'seafood',
   'rice', 'noodles_pasta', 'snacks', 'frozen', 'beverages', 'spices_condiments');
 
 CREATE TABLE IF NOT EXISTS users (
-  id text PRIMARY KEY NOT NULL,
+  id UUID PRIMARY KEY NOT NULL DEFAULT GEN_RANDOM_UUID(),
+  google_id TEXT,
   display_name TEXT NOT NULL,
-  email text NOT NULL,
+  fullname TEXT NOT NULL,
+  email text NOT NULL UNIQUE,
+  password TEXT,
+  login_type login_type NOT NULL DEFAULT 'email',
   display_picture TEXT,
   sustainability_rating NUMERIC NOT NULL DEFAULT 0,
   role user_role NOT NULL DEFAULT 'user',
@@ -46,8 +51,15 @@ CREATE TABLE IF NOT EXISTS products (
 CREATE TABLE IF NOT EXISTS users_products (
   id UUID PRIMARY KEY NOT NULL DEFAULT GEN_RANDOM_UUID(),
   purchase_date TIMESTAMP NOT NULL DEFAULT NOW(),
-  user_id text NOT NULL REFERENCES users(id),
+  user_id UUID NOT NULL REFERENCES users(id),
   product_id UUID NOT NULL REFERENCES products(id),
   quantity NUMERIC NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS session (
+    sid VARCHAR NOT NULL COLLATE "default",
+    sess JSON NOT NULL,
+    expire TIMESTAMP(6) NOT NULL,
+    PRIMARY KEY (sid)
 );

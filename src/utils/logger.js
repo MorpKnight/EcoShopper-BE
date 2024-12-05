@@ -10,6 +10,11 @@ const levels = {
   debug: 4,
 };
 
+const customLevels = {
+  user: 0,
+  admin: 0,
+};
+
 const level = () => {
   const env = process.env.NODE_ENV || 'production';
   const isDevelopment = env === 'production';
@@ -24,7 +29,13 @@ const colors = {
   debug: 'blue',
 };
 
+const customColors = {
+  user: 'yellow',
+  admin: 'green',
+};
+
 winston.addColors(colors);
+winston.addColors(customColors);
 
 const format = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -40,7 +51,6 @@ class PostgresTransport extends Transport {
     this.pool = opts.pool;
   }
 
-  // TODO: FIX LOGGING
   log(info, callback) {
     setImmediate(() => {
       this.emit('logged', info);
@@ -76,6 +86,12 @@ const transports = [
   postgresTransport,
 ];
 
+const customTransports = [
+  new winston.transports.Console(),
+  new winston.transports.File({ filename: 'logs/user.log', level: 'user' }),
+  new winston.transports.File({ filename: 'logs/admin.log', level: 'admin' }),
+];
+
 const Logger = winston.createLogger({
   level: level(),
   levels,
@@ -83,4 +99,11 @@ const Logger = winston.createLogger({
   transports,
 });
 
-module.exports = Logger;
+const customLogger = winston.createLogger({
+  level: level(),
+  levels: customLevels,
+  format,
+  transports: customTransports,
+});
+
+module.exports = { Logger, customLogger };
