@@ -59,3 +59,27 @@ exports.loginEmail = async (body) => {
     const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '30d' });
     return { success : true, message : 'User logged in successfully', token };
 }
+
+exports.loginEmailAdmin = async (body) => {
+    const { email, password } = body;
+    if(!email || !password) throw new Error('Missing required fields');
+
+    const checkUserResponse = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+    if(checkUserResponse.rowCount === 0) throw new Error('User not found');
+
+    const user = checkUserResponse.rows[0];
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if(!passwordMatch) throw new Error('Invalid password');
+    if(user.role !== 'admin') throw new Error('User is not an admin');
+
+    Logger.info(`Admin logged in: ${email}`);
+    const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '30d' });
+    return { success : true, message : 'Admin logged in successfully', token };
+}
+
+exports.logout = async (body) => {
+    const { id } = body;
+    if(!id) throw new Error('Failed to logout user');
+
+    return { success : true, message : 'User logged out successfully' };
+}
