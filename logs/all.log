@@ -289,3 +289,9 @@
 [35m2024-12-05 20:49:57 http: POST /auth/login 200 274 - 519.060 ms -[39m
 [32m2024-12-05 22:06:44 info: User logged in: admin@ecoshopper.com[39m
 [35m2024-12-05 22:06:44 http: POST /auth/login 200 274 - 248.514 ms -[39m
+[31m2024-12-05 22:12:44 error: invalid input value for enum product_category: "fruit"[39m
+[35m2024-12-05 22:12:45 http: POST /admin/add-product 500 68 - 194.960 ms -[39m
+[31m2024-12-05 22:13:06 error: invalid input value for enum food_subcategory: "fresh"[39m
+[35m2024-12-05 22:13:06 http: POST /admin/add-product 500 68 - 188.898 ms -[39m
+[35m2024-12-05 22:13:17 http: POST /admin/add-product 200 490 - 307.483 ms -[39m
+[35m2024-12-05 22:15:07 http: PUT /admin/edit-product 200 492 - 218.482 ms -[39m

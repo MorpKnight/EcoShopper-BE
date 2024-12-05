@@ -1,0 +1,2 @@
+[31m2024-12-05 22:12:44 error: invalid input value for enum product_category: "fruit"[39m
+[31m2024-12-05 22:13:06 error: invalid input value for enum food_subcategory: "fresh"[39m

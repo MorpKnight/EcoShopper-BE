@@ -32,3 +32,5 @@
 [32m2024-12-04 00:48:16 info: Good was successfully fetched[39m
 [32m2024-12-05 20:49:57 info: User logged in: admin@ecoshopper.com[39m
 [32m2024-12-05 22:06:44 info: User logged in: admin@ecoshopper.com[39m
+[31m2024-12-05 22:12:44 error: invalid input value for enum product_category: "fruit"[39m
+[31m2024-12-05 22:13:06 error: invalid input value for enum food_subcategory: "fresh"[39m
