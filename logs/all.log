@@ -285,3 +285,5 @@
 [35m2024-12-04 00:47:54 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 304 - - 229.395 ms -[39m
 [32m2024-12-04 00:48:16 info: Good was successfully fetched[39m
 [35m2024-12-04 00:48:16 http: GET /goods/6aa0d7a1-525b-4335-a535-cffec13f2b78 304 - - 157.575 ms -[39m
+[32m2024-12-05 20:49:57 info: User logged in: admin@ecoshopper.com[39m
+[35m2024-12-05 20:49:57 http: POST /auth/login 200 274 - 519.060 ms -[39m
