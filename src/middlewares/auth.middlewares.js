@@ -3,7 +3,7 @@ const { pool } = require('../config/db.config');
 
 exports.verifyToken = async (req, res, next) => {
     try {
-        const token = req.headers.cookie.split('=')[1];
+        const token = req.headers.cookies.split('=')[1];
         if (!token) throw new Error('Token not found');
         
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
