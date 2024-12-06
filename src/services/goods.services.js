@@ -64,10 +64,15 @@ exports.goodsAlternative = async (body) => {
     if(response.rowCount === 0) throw new Error('There are no alternative products for this product');
 
     const good = response.rows[0];
-    const { name, category, food_subcategory, product_type } = good;
+    const { name, category, food_subcategory, product_sustainability_rating } = good;
     const altResponse = await pool.query(
-        'SELECT * FROM products WHERE product_name ILIKE $1 AND product_category = $2 AND food_subcategory = $3 AND product_type = $4 ORDER BY product_sustainability_rating ASC',
-        [`%${name}%`, category, food_subcategory, product_type]
+        `SELECT * FROM products 
+         WHERE product_name ILIKE $1 
+         AND product_category = $2 
+         AND food_subcategory = $3 
+         AND product_sustainability_rating < $4 
+         ORDER BY product_sustainability_rating ASC`,
+        [`%${name}%`, category, food_subcategory, product_sustainability_rating]
     );
 
     return { success: true, message: 'Products retrieved successfully', goods: altResponse.rows };

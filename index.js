@@ -5,6 +5,8 @@ const sanitizer = require('perfect-express-sanitizer');
 const cors = require('cors');
 const { pool } = require('./src/config/db.config');
 const pgSession = require('connect-pg-simple')(session);
+const fs = require('fs');
+const { execSync } = require('child_process');
 
 require('dotenv').config();
 require('./src/utils/passport');
@@ -41,6 +43,16 @@ app.use(sanitizer.clean({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+const generateKeys = () => {
+    const passphrase = process.env.TOKEN_PASSPHRASE;
+    execSync(`openssl genpkey -algorithm RSA -out private.key -aes256 -pass pass:${passphrase}`);
+    execSync(`openssl rsa -pubout -in private.key -out public.key -passin pass:${passphrase}`);
+};
+
+if (!fs.existsSync('private.key') || !fs.existsSync('public.key')) {
+    generateKeys();
+}
 
 const morganMiddlewares = require('./src/middlewares/morgan.middlewares');
 app.use(morganMiddlewares);
