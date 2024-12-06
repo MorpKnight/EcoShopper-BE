@@ -28,7 +28,7 @@ exports.login = async (userInfo) => {
         userRole = checkUserResponse.rows[0].role;
     }
 
-    const token = jwt.sign({ id: userInfo.id, role: userRole }, process.env.JWT_SECRET, { expiresIn: '30d' });
+    const token = jwt.sign({ id: userInfo.id, role: userRole }, {key: privateKey, passphrase: process.env.TOKEN_PASSPHRASE}, { algorithm: 'RS256', expiresIn: '30d' });
     return { success : true, message : 'User logged in successfully', token };
 };
 
