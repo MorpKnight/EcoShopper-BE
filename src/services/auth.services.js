@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { Logger } = require('../utils/logger');
 const fs = require('fs');
-const privateKey = fs.readFileSync('private.key', 'utf8');
+const privateKey = fs.readFileSync('private.key');
 const publicKey = fs.readFileSync('public.key', 'utf8');
 
 const TOKEN_PASSPHRASE = process.env.TOKEN_PASSPHRASE;
@@ -61,8 +61,7 @@ exports.loginEmail = async (body) => {
     if (!passwordMatch) throw new Error('Invalid password');
 
     Logger.info(`User logged in: ${email}`);
-    // const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '30d' });
-    const token = jwt.sign({ id: user.id, role: user.role }, { key: privateKey, passphrase: process.env.TOKEN_PASSPHRASE }, { algorithm: 'RS256', expiresIn: '30d' });
+    const token = jwt.sign({ id: user.id, role: user.role }, { key: privateKey, passphrase: TOKEN_PASSPHRASE }, { algorithm: 'RS256', expiresIn: '30d' });
     return { success: true, message: 'User logged in successfully', token };
 }
 
@@ -79,7 +78,7 @@ exports.loginEmailAdmin = async (body) => {
     if (user.role !== 'admin') throw new Error('User is not an admin');
 
     Logger.info(`Admin logged in: ${email}`);
-    const token = jwt.sign({ id: user.id, role: user.role }, { key: privateKey, passphrase: process.env.TOKEN_PASSPHRASE }, { algorithm: 'RS256', expiresIn: '30d' });
+    const token = jwt.sign({ id: user.id, role: user.role }, { key: privateKey, passphrase: TOKEN_PASSPHRASE }, { algorithm: 'RS256', expiresIn: '30d' });
     return { success: true, message: 'Admin logged in successfully', token };
 }
 
